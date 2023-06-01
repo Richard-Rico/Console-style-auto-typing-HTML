@@ -20,4 +20,4 @@ This repository contains a Console style auto typing created with HTML, CSS and 
 
 ## How to see this project? 🔎
 
-This project you can opened here [Console style auto typing](https://code.visualstudio.com/)
+This project you can opened here [Console style auto typing](https://richard-rico.github.io/Console-style-auto-typing-HTML/index.html)
