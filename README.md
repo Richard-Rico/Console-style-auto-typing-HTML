@@ -20,4 +20,4 @@ This repository contains a Console style auto typing created with HTML, CSS and 
 
 ## How to see this project? 🔎
 
-this project needs to be opened with [@Microsoft Visual Studio Code.](https://code.visualstudio.com/) or any other code editor.
+This project you can opened here [Console style auto typing](https://code.visualstudio.com/)
