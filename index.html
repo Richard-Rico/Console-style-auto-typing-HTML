@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animación consola</title>
+    <link rel="stylesheet" href="assets/css/console.css">
+</head>
+
+<body>
+    <div id="window-frame">
+        <div id="title-bar">
+            <div id="window-controls">
+                <div class="window-button" id="close-button"></div>
+                <div class="window-button" id="minimize-button"></div>
+                <div class="window-button" id="maximize-button"></div>
+            </div>
+        </div>
+
+        <pre id="console"></pre>
+    </div>
+
+    <script>
+        const welcomeText = ` Hey, nice to see you! 👋
+
+
+    Welcome to my site.   I'm Richard, and ...
+
+let i = {};
+
+i.am = ['FullStack Developer','Based in Finland'];
+
+i.am_interested = 
+[
+    'Web Development', 
+    'Mobile App Developement',
+    'SEO and Marketing'
+];
+
+i.am_currently  = 'Open to Work ⚡';
+
+
+    console.log(farewellMessage);`;
+
+        const farewellText = `See more!:`;
+
+        const consoleElement = document.getElementById("console");
+        let index = 0;
+
+        function typeWriter() {
+            if (index < welcomeText.length) {
+                const currentChar = welcomeText.charAt(index);
+                if (currentChar === "/" && welcomeText.charAt(index + 1) === "/") {
+                    // Colorear en verde
+                    consoleElement.innerHTML += '<span class="console-green">';
+                    while (index < welcomeText.length && welcomeText.charAt(index) !== "\n") {
+                        consoleElement.innerHTML += welcomeText.charAt(index);
+                        index++;
+                    }
+                    consoleElement.innerHTML += '</span>';
+                } else if (currentChar === '"') {
+                    // Colorear en blanco
+                    consoleElement.innerHTML += '<span class="console-white">';
+                    index++;
+                    while (index < welcomeText.length && welcomeText.charAt(index) !== '"') {
+                        consoleElement.innerHTML += welcomeText.charAt(index);
+                        index++;
+                    }
+                    consoleElement.innerHTML += '</span>';
+                } else {
+                    consoleElement.innerHTML += currentChar;
+                }
+                index++;
+                setTimeout(typeWriter, 50); // Velocidad de escritura en milisegundos
+            } else {
+                // Agregar el mensaje de despedida y el enlace
+                consoleElement.innerHTML += `<br>    ${farewellText} <a class="console-link" href="portfolio.html">Portfolio</a>`;
+                consoleElement.innerHTML += `   <a class="console-link" href="contact.html">let's keep in touch!</a>`;
+            }
+        }
+
+        typeWriter();
+        const closeButton = document.getElementById("close-button");
+			const windowFrame = document.getElementById("window-frame");
+
+			closeButton.addEventListener("click", function() {
+  			windowFrame.style.display = "none";
+			});
+
+        // setTimeout(typeWriter, 4250); // Retraso de 4.25 segundos (4250 milisegundos)
+    </script>
+</body>
+
+</html>
